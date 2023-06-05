@@ -76,6 +76,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_option_a"
+        android:onClick="OptionAClick"
         android:layout_width="369dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
@@ -97,6 +98,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_option_b"
+        android:onClick="OptionBClick"
         android:layout_width="369dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
@@ -118,6 +120,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_option_c"
+        android:onClick="OptionCClick"
         android:layout_width="369dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
@@ -139,6 +142,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_option_d"
+        android:onClick="OptionDClick"
         android:layout_width="369dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
@@ -159,7 +163,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/nextQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Responder"

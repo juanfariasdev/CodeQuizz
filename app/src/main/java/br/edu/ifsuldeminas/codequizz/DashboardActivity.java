@@ -4,14 +4,17 @@ import static br.edu.ifsuldeminas.codequizz.MainActivity.listOfQuestions;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import android.os.CountDownTimer;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -33,6 +36,10 @@ public class DashboardActivity extends AppCompatActivity {
     TextView card_question, option_a,option_b,option_c,option_d;
     CardView card_option_a,card_option_b,card_option_c,card_option_d;
 
+    Button nextQuestion;
+
+    int correctCount=0;
+    int wrongCount=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +48,11 @@ public class DashboardActivity extends AppCompatActivity {
 
         Hooks();
 
-
-
         allQuestionsList=listOfQuestions;
         Collections.shuffle(allQuestionsList);
         modelClass=listOfQuestions.get(index);
+
+        nextQuestion.setClickable(false);
 
         setAllData();
 
@@ -98,5 +105,113 @@ public class DashboardActivity extends AppCompatActivity {
         card_option_b = findViewById(R.id.card_option_b);
         card_option_c = findViewById(R.id.card_option_c);
         card_option_d = findViewById(R.id.card_option_d);
+
+        nextQuestion=findViewById(R.id.nextQuestion);
+
     }
+
+    private void Correct(CardView cardOption){
+        cardOption.setCardBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.green_500));
+        disableButton();
+        nextQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                correctCount++;
+                if(index<listOfQuestions.size()-1){
+                    index++;
+                    modelClass=listOfQuestions.get(index);
+                    resetColor();
+                    setAllData();
+                    enableButton();
+                }else{
+                    GameWon();
+                }
+            }
+        });
+
+
+
+    }
+    private void Wrong(CardView cardOption){
+        cardOption.setCardBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.red_500));
+        disableButton();
+        nextQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                wrongCount++;
+                if(index<listOfQuestions.size()-1){
+                    index++;
+                    modelClass=listOfQuestions.get(index);
+                    resetColor();
+                    setAllData();
+                    enableButton();
+                }else{
+                    GameWon();
+                }
+            }
+        });
+
+    }
+
+    private void GameWon(){
+        Intent intent=new Intent(DashboardActivity.this, WonActivity.class);
+        startActivity(intent);
+    }
+
+    public void enableButton(){
+        card_option_a.setClickable(true);
+        card_option_b.setClickable(true);
+        card_option_c.setClickable(true);
+        card_option_d.setClickable(true);
+    }
+    public void disableButton(){
+        card_option_a.setClickable(false);
+        card_option_b.setClickable(false);
+        card_option_c.setClickable(false);
+        card_option_d.setClickable(false);
+    }
+
+    public void resetColor(){
+        card_option_a.setCardBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+        card_option_b.setCardBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+        card_option_c.setCardBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+        card_option_d.setCardBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+        nextQuestion.setClickable(false);
+    }
+
+    public void OptionAClick(View view){
+        if (modelClass.getoA().equals(modelClass.getAns())){
+            Correct(card_option_a);
+        }else{
+            Wrong(card_option_a);
+        }
+    }
+    public void OptionBClick(View view){
+        if (modelClass.getoB().equals(modelClass.getAns())){
+            Correct(card_option_b);
+        }else{
+            Wrong(card_option_b);
+        }
+    }
+
+    public void OptionCClick(View view){
+        if (modelClass.getoC().equals(modelClass.getAns())){
+            Correct(card_option_c);
+        }else{
+            Wrong(card_option_c);
+        }
+    }
+
+    public void OptionDClick(View view){
+
+        if (modelClass.getoD().equals(modelClass.getAns())){
+            Correct(card_option_d);
+        }else{
+            Wrong(card_option_d);
+        }
+    }
+
+
+
+
 }
