@@ -55,4 +55,22 @@
         app:layout_constraintEnd_toEndOf="@+id/correctValue"
         app:layout_constraintStart_toStartOf="@+id/correctValue"
         app:layout_constraintTop_toBottomOf="@+id/correctValue" />
+
+    <Button
+        android:id="@+id/reloadQuizz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="Recomeçar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_dynamic" />
+
+    <ListView
+        android:layout_width="409dp"
+        android:layout_height="186dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correctText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

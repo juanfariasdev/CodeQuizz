@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -18,12 +19,20 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 
 public class DashboardActivity extends AppCompatActivity {
 
     private CountDownTimer countDownTimer;
+    SharedPreferences sharedPreferences;
+
+    List<String> resultList;
 
     int timerValue = 20;
     ProgressBar progressBar;
@@ -157,6 +166,7 @@ public class DashboardActivity extends AppCompatActivity {
         Intent intent=new Intent(DashboardActivity.this, WonActivity.class);
         intent.putExtra("correct", correctCount);
         intent.putExtra("wrong",wrongCount);
+
         startActivity(intent);
     }
 

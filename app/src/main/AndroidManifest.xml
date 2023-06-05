@@ -12,6 +12,9 @@
         android:theme="@style/Theme.CodeQuizz"
         tools:targetApi="31">
         <activity
+            android:name=".homeActivity"
+            android:exported="false" />
+        <activity
             android:name=".WonActivity"
             android:exported="false" />
         <activity
@@ -27,5 +30,5 @@
             </intent-filter>
         </activity>
     </application>
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>
