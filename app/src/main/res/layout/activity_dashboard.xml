@@ -75,7 +75,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/card_option_a"
         android:layout_width="369dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
@@ -96,7 +96,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
+        android:id="@+id/card_option_b"
         android:layout_width="369dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
@@ -104,7 +104,7 @@
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+        app:layout_constraintTop_toBottomOf="@+id/card_option_a">
 
         <TextView
             android:layout_width="wrap_content"
@@ -117,7 +117,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView4"
+        android:id="@+id/card_option_c"
         android:layout_width="369dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
@@ -125,7 +125,7 @@
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+        app:layout_constraintTop_toBottomOf="@+id/card_option_b">
 
         <TextView
             android:layout_width="wrap_content"
@@ -138,7 +138,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView5"
+        android:id="@+id/card_option_d"
         android:layout_width="369dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
@@ -146,7 +146,7 @@
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView4">
+        app:layout_constraintTop_toBottomOf="@+id/card_option_c">
 
         <TextView
             android:id="@+id/quiz_option_d"
@@ -166,5 +166,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView5" />
+        app:layout_constraintTop_toBottomOf="@+id/card_option_d" />
 </androidx.constraintlayout.widget.ConstraintLayout>
