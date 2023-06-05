@@ -16,6 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <!--
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="40dp"
@@ -27,6 +28,7 @@
             app:srcCompat="?attr/homeAsUpIndicator"
             app:tint="@color/white"
             tools:visibility="visible" />
+            </-->
 
         <TextView
             android:id="@+id/textView2"
